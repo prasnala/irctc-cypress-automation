@@ -9,16 +9,18 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   return false
 })
 
+
 describe('IRCTC TATKAL BOOKING', () => {
   it('Tatkal Booking Begins......', () => {
     // Catching Load Event Exception..
     if (TATKAL && PREMIUM_TATKAL) {
       expect(false, 'Make Sure Either TATKAL or PREMIUM TATKAL is True. Not BOTH').to.be.true; // Ensure at least one variable is true (or both are false)
+
     }
 
-    cy.clearCookies();
-    cy.clearLocalStorage();
-    cy.viewport(1478, 1056);
+    cy.clearCookies()
+    cy.clearLocalStorage()
+    cy.viewport(1478, 1056)
     cy.visit('https://www.irctc.co.in/nget/train-search', {
       headers: { "Accept-Encoding": "gzip, deflate" },
       failOnStatusCode: false,
